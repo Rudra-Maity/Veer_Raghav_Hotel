@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import img1 from '../asset/image.jpg';
 import img2 from '../asset/image2.jpg';
+import AnimatedCursor from 'react-animated-cursor';
 
 function ContactSection() {
   const letters = 'CONTACT'.split('');
@@ -11,6 +12,28 @@ function ContactSection() {
 
   return (
     <div className="relative bg-white">
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={25}
+        color="255, 165, 0"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={2}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link',
+        ]}
+      />
+      
       {/* Background Image */}
       <div className="relative h-64 md:h-96">
         <Image
@@ -20,19 +43,21 @@ function ContactSection() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center font-serif font-bold text-4xl">
-          {letters.map((letter, index) => (
-            <motion.h1
-              key={index}
-              className="text-white text-4xl md:text-6xl font-bold italic"
-              initial={{ scale: 1 }}
-              whileHover={{ scale: 1.1, color: '#FF9933' }}
-              transition={{ duration: 0.3 }}
-            >
-              {letter}
-            </motion.h1>
-          ))}
-          <div className="flex pl-4">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center font-serif font-bold text-4xl">
+          <div className="flex space-x-2">
+            {letters.map((letter, index) => (
+              <motion.h1
+                key={index}
+                className="text-white text-4xl md:text-6xl font-bold italic"
+                initial={{ scale: 1 }}
+                whileHover={{ scale: 1.1, color: '#FF9933' }}
+                transition={{ duration: 0.3 }}
+              >
+                {letter}
+              </motion.h1>
+            ))}
+          </div>
+          <div className="flex space-x-2 pt-2">
             {us.map((letter, index) => (
               <motion.h1
                 key={index}
@@ -65,7 +90,7 @@ function ContactSection() {
       </div>
 
       {/* Circular Badge */}
-      <div className="bottom-0 right-0 mb-4 mr-4 fixed">
+      <div className="fixed bottom-4 right-4">
         <div className="relative">
           <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
             $54
@@ -76,7 +101,7 @@ function ContactSection() {
 
       {/* Contact Form Section */}
       <div className="bg-white py-16 bg-gradient-to-r from-[#FF9933] to-[#f3bb83]">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
           {/* Left Section */}
           <div>
             <p className="text-sm text-gray-600 uppercase tracking-wider mb-4">Contact Us</p>

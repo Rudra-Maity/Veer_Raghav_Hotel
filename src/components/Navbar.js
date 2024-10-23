@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import Link from "next/link";
 import { LiaPrayingHandsSolid } from "react-icons/lia";
-import img1 from '../components/arrow.png'
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
@@ -13,10 +13,10 @@ const Navbar = () => {
         rooms: false,
         pages: false,
     });
-    console.log(img1)
+
     const linkStyle = "py-3 px-3 text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 relative cursor-pointer block";
     const activeLinkStyle = "py-3 px-3 text-[#FF9933] border-b-2 border-[#BF6D00] relative cursor-pointer border-double";
-    const dropdownItemStyle = "px-4 py-2 text-left text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 block z-10";
+    const dropdownItemStyle = "px-4 py-2 text-left text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 block z-50";
 
     const toggleDropdown = (dropdown) => {
         setShowDropdown((prev) => ({ ...prev, [dropdown]: !prev[dropdown] }));
@@ -28,28 +28,24 @@ const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <nav className="bg-white shadow-lg">
+            <nav className="bg-white shadow-lg z-50">
                 <div className="max-w-6xl mx-auto px-4">
                     <div className="flex justify-between items-center cursor-pointer">
                         <div className="items-center text-[#FF9933] border-double text-center">
                             <h1 className="mb-0">Hotel Booking</h1>
-                            <motion.div 
-                            
-                            className="flex ">
-                            <Typewriter
-                                options={{
-                                    strings: ['Welcome', 'स्वागत', 'ਸੁਆਗਤ ਹੈ', 'સ્વાગત છે'],
-                                    autoStart: true,
-                                    loop: true,
-                                    delay: 75,
-                                }}
-                                
-                            />
-                            <LiaPrayingHandsSolid size={25}/>
+                            <motion.div className="flex">
+                                <Typewriter
+                                    options={{
+                                        strings: ['Welcome', 'स्वागत', 'ਸੁਆਗਤ ਹੈ', 'સ્વાગત છે'],
+                                        autoStart: true,
+                                        loop: true,
+                                        delay: 75,
+                                    }}
+                                />
+                                <LiaPrayingHandsSolid size={25} />
                             </motion.div>
                         </div>
 
-                        {/* Primary Navbar items */}
                         <div className="hidden md:flex flex-grow justify-center space-x-4 relative">
                             <Link href={'/'}
                                 className={activeLink === 'Home' ? activeLinkStyle : linkStyle}
@@ -70,7 +66,7 @@ const Navbar = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -20 }}
                                         transition={{ duration: 0.3 }}
-                                        className="absolute bg-white mt-2 drop-shadow-lg rounded-lg z-20" // Increased z-index
+                                        className="absolute bg-white mt-2 drop-shadow-lg rounded-lg z-20"
                                     >
                                         <div className="py-2 w-max">
                                             <Link href={'/deluxe-rooms'} className={dropdownItemStyle}>Deluxe Rooms</Link>
@@ -93,7 +89,7 @@ const Navbar = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -20 }}
                                         transition={{ duration: 0.3 }}
-                                        className="absolute bg-white left-0 mt-2 drop-shadow-lg rounded-lg z-20" // Increased z-index
+                                        className="absolute bg-white left-0 mt-2 drop-shadow-lg rounded-lg z-20"
                                     >
                                         <div className="py-2 w-max">
                                             <Link href={'/page1'} className={dropdownItemStyle}>Page 1</Link>
@@ -109,23 +105,20 @@ const Navbar = () => {
                             <Link href={'/news'} className={activeLink === 'News' ? activeLinkStyle : linkStyle} onClick={() => setActiveLink('News')}>News</Link>
                         </div>
                         
-                        {/* Mobile menu button */}
                         <div className="md:hidden flex items-center">
                             <button onClick={() => setIsOpen(!isOpen)} className="mobile-menu-button">
-                                <FiAlignJustify color="orange" size={25}/>
+                                <FiAlignJustify color="orange" size={25} />
                             </button>
                         </div>
                     </div>
                 </div>
 
-                {/* Mobile menu */}
                 <motion.div 
                     initial={{ opacity: 0, height: 0 }}
                     animate={isOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                     className={`${isOpen ? 'block' : 'hidden'} md:hidden`}
                 >
-                    <Link href={'/'} className={linkStyle} onClick={() => setActiveLink('Home')}>Home</Link>
                     <div className='relative'>
                         <div className={linkStyle} onClick={() => toggleDropdown('rooms')}>Rooms</div>
                         {showDropdown.rooms && (
@@ -134,7 +127,7 @@ const Navbar = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="py-2 bg-white shadow-md z-20" // Increased z-index
+                                className="py-2 bg-white shadow-md z-20"
                             >
                                 <Link href={'/deluxe-rooms'} className={dropdownItemStyle}>Deluxe Rooms</Link>
                                 <Link href={'/standard-rooms'} className={dropdownItemStyle}>Standard Rooms</Link>
@@ -142,6 +135,7 @@ const Navbar = () => {
                             </motion.div>
                         )}
                     </div>
+                    <Link href={'/'} className={linkStyle} onClick={() => setActiveLink('Home')}>Home</Link>
                     <Link href={'/about'} className={linkStyle} onClick={() => setActiveLink('About')}>About</Link>
                     <Link href={'/contact'} className={linkStyle} onClick={() => setActiveLink('Contact')}>Contact</Link>
                     <Link href={'/news'} className={linkStyle} onClick={() => setActiveLink('News')}>News</Link>
