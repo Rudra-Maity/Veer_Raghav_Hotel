@@ -32,9 +32,9 @@ const Navbar = () => {
                     <div className="flex justify-between items-center cursor-pointer">
                         <div className="items-center text-[#FF9933] border-double text-center">
                             <h1 className="mb-0">Hotel Booking</h1>
-                            <Typewriter
+                            <Typewriter className='block'
                                 options={{
-                                    strings: ['Welcome', 'स्वागत'],
+                                    strings: ['Welcome', 'स्वागत','ਸੁਆਗਤ ਹੈ','સ્વાગત છે'],
                                     autoStart: true,
                                     loop: true,
                                     delay: 75,
