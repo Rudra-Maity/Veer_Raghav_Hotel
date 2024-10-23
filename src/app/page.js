@@ -1,5 +1,6 @@
 import CustomCursor from "@/components/Customcourser";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import AnimatedCursor from "react-animated-cursor";
 import img1 from '../components/arrow.png'
@@ -44,3 +45,4 @@ export default function Home() {
     </>
   );
 }
+
