@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      cursor: {
+        'custom': 'url(../components/arrow.png), auto', // specify your custom cursor image
+      },
     },
   },
   plugins: [],
