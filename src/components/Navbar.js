@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import Link from "next/link";
 import { LiaPrayingHandsSolid } from "react-icons/lia";
-
+import img1 from '../components/arrow.png'
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
@@ -13,7 +13,7 @@ const Navbar = () => {
         rooms: false,
         pages: false,
     });
-
+    console.log(img1)
     const linkStyle = "py-3 px-3 text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 relative cursor-pointer block";
     const activeLinkStyle = "py-3 px-3 text-[#FF9933] border-b-2 border-[#BF6D00] relative cursor-pointer border-double";
     const dropdownItemStyle = "px-4 py-2 text-left text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 block z-10";
