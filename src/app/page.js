@@ -33,15 +33,8 @@ export default function Home() {
             '.link',
           ]}
         />
-        
-        {/* Adjust Navbar position and z-index */}
-        <div className="fixed top-0 left-0 w-full z-50">
-        </div>
 
-        <div className=""> {/* Add padding to avoid overlap with fixed Navbar */}
-          {/* <ContactSection /> */}
         </div>
-      </div>
     </>
   );
 }
