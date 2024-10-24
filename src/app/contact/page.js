@@ -90,7 +90,7 @@ function ContactSection() {
       </div>
 
       {/* Circular Badge */}
-      <div className="fixed bottom-4 right-4">
+      <div className="fixed bottom-4 right-4 z-50">
         <div className="relative">
           <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
             $54
@@ -107,7 +107,7 @@ function ContactSection() {
             <p className="text-sm text-gray-600 uppercase tracking-wider mb-4">Contact Us</p>
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Get In Touch</h2>
             <p className="text-gray-700 mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan. Maecenas quis nunc sed sapien dignissim pulvinar. Sed at gravida.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan.
             </p>
             <button className="bg-gradient-to-r from-[#e5e2e0] to-[#FFA500] text-white px-6 py-2 font-merriweather font-semibold text-lg uppercase tracking-wide rounded shadow-md hover:from-[#FFA500] hover:to-[#FF9933] transition duration-300">
               View Prices
@@ -154,25 +154,23 @@ function ContactSection() {
 }
 
 const Card = ({ imageSrc, title, description }) => (
-  <div className="bg-white p-8 shadow-lg rounded-lg">
-    <div className="flex items-center">
-      <motion.div
-        initial={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Image
-          src={imageSrc}
-          alt={title}
-          width={180}
-          height={180}
-          className="object-cover mr-4 rounded-full"
-        />
-      </motion.div>
-      <div className='pl-2'>
-        <h2 className="font-serif font-semibold text-3xl text-[#FF9933]">{title}</h2>
-        <p className="font-merriweather font-normal text-base text-gray-800">{description}</p>
-      </div>
+  <div className="bg-white p-8 shadow-lg rounded-lg flex flex-col items-center md:flex-row">
+    <motion.div
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.3 }}
+    >
+      <Image
+        src={imageSrc}
+        alt={title}
+        width={180}
+        height={180}
+        className="object-cover rounded-full"
+      />
+    </motion.div>
+    <div className="pl-4">
+      <h2 className="font-serif font-semibold text-3xl text-[#FF9933] md:text-center text-center">{title}</h2>
+      <p className="font-merriweather font-normal text-base text-gray-800">{description}</p>
     </div>
   </div>
 );
