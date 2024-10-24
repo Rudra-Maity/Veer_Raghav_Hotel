@@ -116,7 +116,7 @@ function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
-        className="bg-white py-16 bg-gradient-to-r from-orange-400 to-yellow-500"
+        className="bg-white py-16 bg-gradient-to-r from-orange-400 to-yellow-300"
       >
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
           {/* Left Section */}
@@ -126,7 +126,7 @@ function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <p className="text-sm text-gray-600 uppercase tracking-wider mb-4">Contact Us</p>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">Get In Touch</h2>
             <p className="text-gray-700 mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan.
               lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan.

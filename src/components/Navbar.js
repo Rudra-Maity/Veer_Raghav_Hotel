@@ -41,7 +41,7 @@ const Navbar = () => {
                                 Home
                             </Link>
 
-                            <Link href="/gallery" className={linkStyle} onClick={() => setIsOpen(false)}>
+                            <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
                                 Gallery
                             </Link>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                     <Link href="/" className={linkStyle} onClick={() => setIsOpen(false)}>
                         Home
                     </Link>
-                    <Link href="/gallery" className={linkStyle} onClick={() => setIsOpen(false)}>
+                    <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
                         Gallery
                     </Link>
                     <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>
