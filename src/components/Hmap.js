@@ -1,6 +1,6 @@
 export default function Hmap(){
     return (
-        <div className="mt-3">
+        <div className="mb-2">
             <h3 className="text-xl font-semibold mb-4 text-center">Our Location</h3>
             <div className=" bg-gray-200 rounded-lg m-3">
               {/* Map placeholder - replace with actual map component */}
