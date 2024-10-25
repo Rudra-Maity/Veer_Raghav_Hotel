@@ -3,7 +3,7 @@
 import React from "react";
 import "@/components/HeroSection.css"
 import { LayoutGridCard } from "@/components/ui/layout-grid";
-
+import AnimatedCursor from "react-animated-cursor";
 // Define the skeleton components first
 const SkeletonOne = () => (
   <div>
@@ -158,7 +158,30 @@ function Page() {
   ];
 
   return (
+    
     <div className="bg-white w-screen">
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={25}
+        // RGB values for white color
+        color="255, 165, 0"
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={2}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'textarea',
+          'button',
+          '.link',
+        ]}
+      />
     <div className="h-[350vh] bg-white py-20 w-full flex flex-col items-center justify-center max-w-screen-xl mx-auto px-4">
       <h1 className="font-serif font-bold text-4xl bg-gradient-to-r from-[#FF9933] to-[#FFD700] text-transparent bg-clip-text flex items-center justify-center">
         Gallery

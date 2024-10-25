@@ -19,7 +19,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
         >
             <nav className="bg-white shadow-lg z-50">
-                <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+                <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center">
                     <div className="items-center text-[#FF9933] pr-5">
                         <h1 className="text-xl font-bold">Hotel Booking</h1>
                         <motion.div className="flex ml-4">
@@ -35,15 +35,12 @@ const Navbar = () => {
                         </motion.div>
                     </div>
 
-                    <div className="hidden md:flex flex-grow justify-between items-center space-x-4">
+                    <div className="hidden md:flex flex-grow justify-end items-center space-x-4">
                         <Link href="/" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Home
                         </Link>
                         <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Gallery
-                        </Link>
-                        <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>
-                            About
                         </Link>
                         <Link href="/rooms" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Rooms
@@ -52,8 +49,8 @@ const Navbar = () => {
                             Contact
                         </Link>
                     </div>
-                    
-                    <div className="md:hidden flex items-center">
+
+                    <div className="md:hidden flex items-center justify-end">
                         <button onClick={() => setIsOpen(!isOpen)} className="mobile-menu-button focus:outline-none">
                             <FiAlignJustify color="orange" size={25} />
                         </button>
@@ -66,15 +63,12 @@ const Navbar = () => {
                     transition={{ duration: 0.3 }}
                     className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white`}
                 >
-                    <div className="flex flex-col space-y-2 p-4">
+                    <div className="flex flex-col space-y-2 p-4 justify-end">
                         <Link href="/" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Home
                         </Link>
                         <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Gallery
-                        </Link>
-                        <Link href="/about" className={linkStyle} onClick={() => setIsOpen(false)}>
-                            About
                         </Link>
                         <Link href="/rooms" className={linkStyle} onClick={() => setIsOpen(false)}>
                             Rooms
