@@ -5,12 +5,18 @@ import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import Link from "next/link"; 
 import { LiaPrayingHandsSolid } from "react-icons/lia";
+import { usePathname } from 'next/navigation'; // Import usePathname from next/navigation
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname(); // Get the current pathname
 
     const linkStyle = "py-3 px-4 text-[#FF9933] hover:bg-[#FF9933] hover:text-white transition duration-200 rounded-md";
-    const activeLinkStyle = "py-3 px-4 text-[#FF9933] border-b-2 border-[#BF6D00] relative cursor-pointer border-double";
+    const activeLinkStyle = "py-3 px-4 border-b-2 border-[#BF6D00] bg-[#FF9933] relative cursor-pointer border-double rounded-md text-white";
+
+    const getLinkClass = (path) => {
+        return pathname === path ? activeLinkStyle : linkStyle;
+    };
 
     return (
         <motion.div 
@@ -36,16 +42,16 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden md:flex flex-grow justify-end items-center space-x-4">
-                        <Link href="/" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/" className={getLinkClass('/')} onClick={() => setIsOpen(false)}>
                             Home
                         </Link>
-                        <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/gallary" className={getLinkClass('/gallary')} onClick={() => setIsOpen(false)}>
                             Gallery
                         </Link>
-                        <Link href="/rooms" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/rooms" className={getLinkClass('/rooms')} onClick={() => setIsOpen(false)}>
                             Rooms
                         </Link>
-                        <Link href="/contact" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/contact" className={getLinkClass('/contact')} onClick={() => setIsOpen(false)}>
                             Contact
                         </Link>
                     </div>
@@ -64,16 +70,16 @@ const Navbar = () => {
                     className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-white`}
                 >
                     <div className="flex flex-col space-y-2 p-4 justify-end">
-                        <Link href="/" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/" className={getLinkClass('/')} onClick={() => setIsOpen(false)}>
                             Home
                         </Link>
-                        <Link href="/gallary" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/gallary" className={getLinkClass('/gallary')} onClick={() => setIsOpen(false)}>
                             Gallery
                         </Link>
-                        <Link href="/rooms" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/rooms" className={getLinkClass('/rooms')} onClick={() => setIsOpen(false)}>
                             Rooms
                         </Link>
-                        <Link href="/contact" className={linkStyle} onClick={() => setIsOpen(false)}>
+                        <Link href="/contact" className={getLinkClass('/contact')} onClick={() => setIsOpen(false)}>
                             Contact
                         </Link>
                     </div>
