@@ -2,13 +2,20 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import img1 from '../asset/image.jpg';
-import img2 from '../asset/image2.jpg';
 import AnimatedCursor from 'react-animated-cursor';
 
 function ContactSection() {
   const letters = 'CONTACT'.split('');
   const us = "US".split("");
+
+  // Define images
+  const images = [
+    { src: "/image/hotel4.jpeg" },
+    { src: "/image/room5.jpeg" },
+    { src: "/image/hotel2.jpeg" },
+    { src: "/image/room3.jpeg" },
+    { src: "/image/temple1.webp" },
+  ];
 
   return (
     <div className="relative bg-white">
@@ -33,11 +40,11 @@ function ContactSection() {
           '.link',
         ]}
       />
-      
+
       {/* Background Image */}
       <div className="relative h-64 md:h-96">
         <Image
-          src={img1}
+          src={images[0].src} // Use the first image from the array
           alt="Background"
           layout="fill"
           className="object-cover"
@@ -82,7 +89,7 @@ function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <Card
-              imageSrc={img2}
+              imageSrc={images[1].src} // Use the second image
               title="Reception Always Open"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis."
             />
@@ -93,7 +100,7 @@ function ContactSection() {
             transition={{ duration: 0.5 }}
           >
             <Card
-              imageSrc={img2}
+              imageSrc={images[2].src} // Use the third image
               title="Online Reservations"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis."
             />
@@ -101,18 +108,8 @@ function ContactSection() {
         </div>
       </div>
 
-      {/* Circular Badge */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <div className="relative">
-          <div className="bg-black text-white rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold">
-            $54
-          </div>
-          <span className="absolute top-0 right-0 bg-yellow-500 text-xs text-black px-1 py-0.5 rounded-full">NEW</span>
-        </div>
-      </div>
-
       {/* Contact Form Section */}
-      <motion.div 
+      <motion.div
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5 }}
@@ -129,7 +126,6 @@ function ContactSection() {
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white">Get In Touch</h2>
             <p className="text-gray-700 mb-6">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan.
-              lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor tellus vel mauris scelerisque accumsan.
             </p>
             <button className="bg-gradient-to-r from-[#e5e2e0] to-[#FFA500] text-white px-6 py-2 font-merriweather font-semibold text-lg uppercase tracking-wide rounded shadow-md hover:from-[#FFA500] hover:to-[#FF9933] transition duration-300">
               View Prices

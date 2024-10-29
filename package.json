@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ayodhya": "file:",
     "clsx": "^2.1.1",
     "cursor-effects": "^1.0.15",
     "framer-motion": "^11.11.9",
